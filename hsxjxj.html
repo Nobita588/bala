@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>E-Shop | Premium Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #2b1055, #7597de);
+      color: #333;
+    }
+
+    /* NAVBAR */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(20, 10, 40, 0.9);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      color: #f5c542;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #f5c542;
+    }
+
+    /* CART ICON */
+    .cart-icon {
+      position: relative;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -12px;
+      background: #f5c542;
+      color: black;
+      font-size: 12px;
+      padding: 3px 7px;
+      border-radius: 50%;
+      font-weight: bold;
+    }
+
+    /* COMMON SECTION */
+    section {
+      width: 85%;
+      margin: 70px auto;
+      background: white;
+      padding: 50px;
+      border-radius: 18px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 34px;
+      color: #2b1055;
+    }
+
+    /* LOGIN */
+    #login {
+      background: linear-gradient(135deg, #41295a, #2f0743);
+      color: white;
+      text-align: center;
+    }
+
+    .login-box {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      width: 360px;
+      margin: auto;
+      padding: 35px;
+      border-radius: 18px;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border: none;
+      border-radius: 8px;
+    }
+
+    /* BUTTON */
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #f5c542, #f0b429);
+      color: black;
+      padding: 12px 35px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* VIDEO */
+    #video {
+      text-align: center;
+      background: #f7f6ff;
+    }
+
+    iframe {
+      width: 720px;
+      height: 405px;
+      max-width: 100%;
+      border-radius: 18px;
+      border: none;
+    }
+
+    /* PRODUCTS */
+    #products {
+      text-align: center;
+    }
+
+    .card {
+      width: 260px;
+      background: #ffffff;
+      display: inline-block;
+      margin: 25px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.25);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 15px 0 5px;
+      color: #2b1055;
+    }
+
+    .price {
+      color: #1e7f3b;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .add-btn {
+      display: inline-block;
+      background: #2b1055;
+      color: white;
+      padding: 10px 25px;
+      margin-bottom: 20px;
+      border-radius: 25px;
+      text-decoration: none;
+    }
+
+    .add-btn:hover {
+      background: #41295a;
+    }
+
+    /* CART */
+    #cart {
+      background: #f7f6ff;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 18px 0;
+      font-size: 18px;
+    }
+
+    /* PAYMENT */
+    #payment input {
+      width: 60%;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #140a28;
+      color: #aaa;
+      text-align: center;
+      padding: 30px;
+      margin-top: 80px;
+    }
+
+    footer span {
+      color: #f5c542;
+    }
+
+    @media(max-width:768px) {
+      section { width: 95%; padding: 35px; }
+      .login-box { width: 100%; }
+      #payment input { width: 90%; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>E-Shop</h1>
+  <nav>
+    <a href="#login">Login</a>
+    <a href="#video">Offers</a>
+    <a href="#products">Products</a>
+    <a href="#cart" class="cart-icon">Cart 🛒<span class="cart-count">2</span></a>
+    <a href="#payment">Payment</a>
+  </nav>
+</header>
+
+<!-- LOGIN -->
+<section id="login">
+  <h2>Welcome Back</h2>
+  <div class="login-box">
+    <input type="text" placeholder="User ID">
+    <input type="password" placeholder="Password">
+    <a href="#video" class="btn">Login</a>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="video">
+  <h2>Exclusive Deals</h2>
+  <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <h2>Featured Products</h2>
+
+  <div class="card">
+    <img src="Screenshot 2025-12-30 111242.png">
+    <h3>Smartphone</h3>
+    <p class="price">₹15,000</p>
+    <a href="#cart" class="add-btn">Add to Cart</a>
+  </div>
+
+  <div class="card">
+    <img src="Screenshot 2025-12-30 111023.png">
+    <h3>Headphones</h3>
+    <p class="price">₹2,000</p>
+    <a href="#cart" class="add-btn">Add to Cart</a>
+  </div>
+
+  <div class="card">
+    <img src="Screenshot 2025-12-30 110634.png">
+    <h3>Laptop</h3>
+    <p class="price">₹55,000</p>
+    <a href="#cart" class="add-btn">Add to Cart</a>
+  </div>
+</section>
+
+<!-- CART -->
+<section id="cart">
+  <h2>Your Cart</h2>
+  <div class="cart-item">
+    <span>Smartphone</span>
+    <span>₹15,000</span>
+  </div>
+  <div class="cart-item">
+    <span>Headphones</span>
+    <span>₹2,000</span>
+  </div>
+  <hr>
+  <h3>Total: ₹17,000</h3>
+  <a href="#payment" class="btn">Checkout</a>
+</section>
+
+<!-- PAYMENT -->
+<section id="payment">
+  <h2>Secure Payment</h2>
+  <input type="text" placeholder="Card Number"><br>
+  <input type="month"><br>
+  <input type="password" placeholder="CVV"><br>
+  <a href="#" class="btn">Pay Now</a>
+</section>
+
+<footer>
+  © 2025 <span>E-Shop</span> | Premium Shopping Experience
+</footer>
+
+</body>
+</html>
